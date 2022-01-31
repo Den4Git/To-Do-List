@@ -2,20 +2,20 @@ Vue.createApp({
     data() {
         return{
             valueInput: '',
-            needDoList: []
+            needDolist: []
         };
     },
     methods: {
-        handlyInput(event) {
+        handlyInput (event) {
             this.valueInput = event.target.value;
         },
-        AddTask() {
+        addTask() {
             if(this.valueInput === '') { return };
-            this.needDoList.push({
+            this.needDolist.push({
                 title: this.valueInput,
                 id: Math.random()
             });
             this.valueInput = '';
         }
     }
-}).mount('#app');
+}).mount('#app ');

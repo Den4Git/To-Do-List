@@ -12,23 +12,44 @@
 </head>
 <body>
 
-    <div class="header">
-        <div class="container">
-            <div class="logo">ToDo List</div>
-            <div class="form">
-                <input type="text">
-                <button class="btn">Add a new motivational task</button>
+    <div id="app">
+        <div class="header">
+            <div class="container">
+                <div class="logo">ToDo List</div>
+                <div class="form">
+                    <input type="text" v-bind:value="valueInput" v-on:input="handlyInput">
+                    <button class="btn" v-on:click="addTask">Add a new motivational task</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <h2>
-            <span>To DO!</span>
-            <span class="mask-num">10</span>
-        </h2>
-        <ul class="mask-list">
-            <li></li>
-        </ul>
+        <div class="container">
+            <h2>
+                <span>To DO!</span>
+                <span class="mask-num">10</span>
+            </h2>
+            <ul class="mask-list">
+                <li v-for="(mask, index) in needDolist" :key="mask.id">
+                    <div>
+                        <input type="checkbox">
+                        <span>{{ mask.title }}</span>
+                    </div>
+                    <button class="btn-remove">Remove</button>
+                </li>
+            </ul>
+            <h2>
+                <span>Done</span>
+                <span class="mask-num">10</span>
+            </h2>
+            <ul class="mask-list complete-list">
+                <li>
+                    <div>
+                        <input type="checkbox" checked>
+                        <span>Add code</span>
+                    </div>
+                    <button class="btn-remove">Remove</button>
+                </li>
+            </ul>
+        </div>
     </div>
     
     <script src="https://unpkg.com/vue@next"></script>
