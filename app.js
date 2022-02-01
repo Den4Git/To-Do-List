@@ -2,7 +2,7 @@ Vue.createApp({
     data() {
         return{
             valueInput: '',
-            needDolist: [],
+            needDoList: [],
             completeList: []
         };
     },
@@ -12,7 +12,7 @@ Vue.createApp({
         },
         addTask() {
             if(this.valueInput === '') { return };
-            this.needDolist.push({
+            this.needDoList.push({
                 title: this.valueInput,
                 id: Math.random()
             });
@@ -29,7 +29,7 @@ Vue.createApp({
             }
         },
         removeMask (index, type) {
-            const toDoList = type === 'need' ? this.needDoList : this.completeList:
+            const toDoList = type === 'need' ? this.needDoList : this.completeList
             toDoList.splice(index,1);
         }
     }
