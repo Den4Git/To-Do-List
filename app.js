@@ -18,4 +18,4 @@ Vue.createApp({
             this.valueInput = '';
         }
     }
-}).mount('#app ');
+}).mount('#app');
